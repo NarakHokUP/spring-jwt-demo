@@ -20,7 +20,7 @@ public class CityController {
 	public List<City> findUserCity(Authentication auth, Principal principal){
 		System.out.println(auth.getAuthorities());
 		System.out.println(principal.getName());
-		return Arrays.asList(new City(1, "Phnom Penh"), new City(2, "Takhmoa"));
+		return Arrays.asList(new City(/*1, "Phnom Penh"*/), new City(/*2, "Takhmoa"*/));
 	}
 	
 	@Secured("ROLE_ADMIN")
@@ -28,6 +28,6 @@ public class CityController {
 	public List<City> findAdminCity(Authentication auth, Principal principal){
 		System.out.println(auth.getAuthorities());
 		System.out.println(principal.getName());
-		return Arrays.asList(new City(1, "Phnom Penh"), new City(2, "Takhmoa"));
+		return Arrays.asList(new City(/*1, "Phnom Penh"*/), new City(/*2, "Takhmoa"*/));
 	}
 }
