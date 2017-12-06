@@ -14,7 +14,6 @@ import com.phearun.model.City;
 @RestController
 public class CityController {
 
-	
 	@Secured("ROLE_USER")
 	@GetMapping("/api/user/cities")
 	public List<City> findUserCity(Authentication auth, Principal principal){

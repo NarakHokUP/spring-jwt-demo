@@ -32,7 +32,7 @@ public class JwtTokenUtil implements Serializable {
     private String secret;
 
     @Value("${jwt.expiration}")
-    private Long expiration;
+    private Long expirationInMinute;
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -59,7 +59,7 @@ public class JwtTokenUtil implements Serializable {
     }
 
     private Date generateExpirationDate() {
-        return new Date(System.currentTimeMillis() + expiration * 1000);
+        return new Date(System.currentTimeMillis() + expirationInMinute * 60_000);
     }
 
     private String generateAudience(Device device) {
